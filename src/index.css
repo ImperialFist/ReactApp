@@ -137,4 +137,104 @@ h2{
     display:flex;
     justify-content: space-between;
     font-size: 1.3rem;
+    margin: 0 2rem;
+    color: rgb(8, 8, 136);
+  
+}
+
+.input-group{
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  background-color: #fff;
+
+
+}
+
+.input-group.glow-error{
+  outline: 2px solid red;
+}
+
+.input-field{
+  flex: 1 1 3rem;
+  font-size: 1rem;
+}
+
+.btn{
+  border-radius: 10%;
+  padding: 0.5rem 0.6rem;
+  font-size: 1rem;
+}
+
+.btn:disabled{
+  background-color: gray;
+  color: #fff;
+
+}
+
+
+.btn:hover{
+  box-shadow: 0px 0px 6px 6px rgba(0,255,255,0.67);
+}
+
+.btn-primary{
+  background-color: aqua;
+  color: rgb(8, 8, 136);
+}
+
+.btn-secondary{
+  background-color: rgb(8, 8, 136);
+  color: #fff;
+}
+
+.message{
+  padding: 0.3rem 0 0 0;
+  text-align: center;
+
+}
+
+.rating{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  
+}
+
+.rating li{
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5%;
+}
+
+.rating__label{
+  position: absolute;
+  text-align: center;
+  top: 0%;
+  left: 0%;
+  background-color: rgb(55, 230, 230);
+  border-radius: 20px;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.rating__label:hover{
+  box-shadow: 0px 0px 6px 6px rgba(0,255,255,0.67);
+}
+
+/* скрывает точку у radiobtn */
+[type='radio'] {
+  opacity: 0;
+}
+
+[type='radio']:checked ~ .rating__label{
+  background-color: rgb(8, 8, 136);
+  color: #fff;
 }
