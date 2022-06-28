@@ -157,6 +157,14 @@ h1{
     background-color: transparent;
 }
 
+.edit{
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  padding: 0.2rem;
+  background-color: transparent;
+}
+
 .feedback-stats{
     display:flex;
     justify-content: space-between;

@@ -1,8 +1,13 @@
 //rfce
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
+import { useContext } from 'react';
+import FeedbackContext from '../context/FeedbackContext';
 
-function FeedbackStats({feedback}) {
+function FeedbackStats() {
+  //Вместо получения на вход функции отзывов они берутся в самой функции
+  const {feedback} = useContext(FeedbackContext);
+
     //Подсчёт среднего рейтинга acc- аккумулятор cur - текущий элемент, дефолт для аккума - 0
     let average = feedback.reduce((acc, curr)=>{
         return acc+curr.rating
@@ -22,9 +27,9 @@ function FeedbackStats({feedback}) {
   )
 }
 
-FeedbackStats.propTypes = {
-    feedback: PropTypes.array.isRequired,
-}
+// FeedbackStats.propTypes = {
+//     feedback: PropTypes.array.isRequired,
+// }
 
 
 export default FeedbackStats

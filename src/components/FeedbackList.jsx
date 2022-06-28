@@ -1,11 +1,15 @@
 import React from 'react'
 //для анимаци
 import {motion ,AnimatePresence} from 'framer-motion';
+import { useContext } from 'react';
 import FeedbackItem from './FeedbackItem';
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
+import FeedbackContext from '../context/FeedbackContext';
 
 
-function FeedbackList({feedback, handleDelete}) {
+function FeedbackList() {
+    const {feedback} = useContext(FeedbackContext);
+
     //проверка на пустой список отзывов
     if(!feedback || feedback.length === 0){
         return <p>No feedback yet</p>
@@ -35,7 +39,7 @@ function FeedbackList({feedback, handleDelete}) {
                     }}
                     transition={{ duration: 0.5 }}
                 >
-                    <FeedbackItem key={item.id} item={item} handleDelete ={handleDelete}  />
+                    <FeedbackItem key={item.id} item={item}  />
                 </motion.div>
             ))}
             </AnimatePresence>
@@ -54,16 +58,16 @@ function FeedbackList({feedback, handleDelete}) {
    
 }
 
-FeedbackList.propTypes = {
-    //Можно просто указать array, но можно детально типы данных для каждого объекта
-    feedback: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired, 
-            rating: PropTypes.number.isRequired,
-            text: PropTypes.string.isRequired,
-        })
-    )
-}
+// FeedbackList.propTypes = {
+//     //Можно просто указать array, но можно детально типы данных для каждого объекта
+//     feedback: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             id: PropTypes.number.isRequired, 
+//             rating: PropTypes.number.isRequired,
+//             text: PropTypes.string.isRequired,
+//         })
+//     )
+// }
 
 
 export default FeedbackList

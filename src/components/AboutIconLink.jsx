@@ -14,7 +14,7 @@ function AboutIconLink() {
     }}> */}
     <Link to='/about'>
 
-      <FaQuestion size={30} />
+      <FaQuestion size={30} color='blue' />
     </Link>
     </div>
   )

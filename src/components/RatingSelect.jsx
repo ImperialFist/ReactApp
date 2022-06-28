@@ -1,16 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { motion } from "framer-motion"
+import FeedbackContext from '../context/FeedbackContext';
 
 export default function RatingSelect({select}) {
 
     const [selected, setSelected] = useState(10);
+    const {feedbackEdit} = useContext(FeedbackContext);
+
+    useEffect(()=>{
+        setSelected(feedbackEdit.item.rating)
+    },[feedbackEdit]);
+
     //обработчик выбора радиобаттонов
     const handleChange = (e)=>{
         setSelected(Number(e.currentTarget.value));
         select(Number(e.currentTarget.value));
         
     }
+
+
 
   return (
     <ul className='rating'>
