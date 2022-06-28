@@ -86,16 +86,40 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
 body{
     background-color: aqua;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
-h2{
+.header__title{
+  padding: 1rem 0;
+
+}
+
+h2, h1{
     text-align: center;
     font-size: 1.25rem;
     line-height: 2rem;
 }
+
+h2{
+  font-weight: 600;
+}
+
+h1{
+  font-weight: 700;
+}
+
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 
 .card{
     background-color: #fff;
@@ -137,6 +161,7 @@ h2{
     display:flex;
     justify-content: space-between;
     font-size: 1.3rem;
+    font-weight: 600;
     margin: 0 2rem;
     color: rgb(8, 8, 136);
   
@@ -203,7 +228,7 @@ h2{
   
 }
 
-.rating li{
+.rating__item{
   position: relative;
   width: 2rem;
   height: 2rem;
@@ -237,4 +262,12 @@ h2{
 [type='radio']:checked ~ .rating__label{
   background-color: rgb(8, 8, 136);
   color: #fff;
+}
+
+.about-link{
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  right: 0;
+  color: rgb(8, 8, 136);
 }

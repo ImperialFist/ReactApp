@@ -15,9 +15,9 @@ function FeedbackStats({feedback}) {
 
   return (
     <div className='feedback-stats'>
-      <h4>{feedback.length} Reviews</h4>
+      <h4>Количество отзывов: {feedback.length}</h4>
       {/* проеряем, если нет отзывов, выводим 0 вместо NaN */}
-      <h4>Average Rating: {isNaN(average) ? 0 : average}</h4>
+      <h4>Средний рейтинг: {isNaN(average) ? 0 : average}</h4>
     </div>
   )
 }

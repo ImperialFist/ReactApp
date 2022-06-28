@@ -1,6 +1,4 @@
-// раньше нужно было подключать всегда
-//React.createElement('div',{className='container'})
-//import React from 'react'
+
 //Для генерации ID-шников npm i uuid
 import {v4 as uuidv4} from 'uuid'
 import { useState } from "react"
@@ -9,6 +7,12 @@ import FeedbackList from "./components/FeedbackList"
 import FeedbackData from "./Data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
+import AboutPage from './pages/AboutPage'
+//Для подключения маршрутов позволит переходить к "/about" вместо "/#about"
+//Для # заменить "BrowserRouter" на "HashRouter"
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import AboutIconLink from './components/AboutIconLink'
+
 
 function App () {
     //setFeedback - для всеъ манипуляций с отзывами - удалять, добавлять
@@ -28,15 +32,26 @@ function App () {
     }
 
     return(
-        <>
+        <Router>
           <Header />
           <div className="container">
-            <FeedbackForm handleAdd={addFeedback}/>
-            <FeedbackStats feedback={feedback}/>
-            {/* пробрасываем Delete в FeedbackList */}
-            <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+            <Routes>
+                <Route exact path='/' element={
+                    <>
+                        <FeedbackForm handleAdd={addFeedback}/>
+                        <FeedbackStats feedback={feedback}/>
+                        {/* пробрасываем Delete в FeedbackList */}
+                        <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+                        <AboutIconLink />
+                    </>
+                }>
+                </Route>
+
+                {/* маршрут к стринице about */}
+                <Route path='/about' element={<AboutPage />} />
+            </Routes>
           </div>
-        </>
+        </Router>
     )
 }
 

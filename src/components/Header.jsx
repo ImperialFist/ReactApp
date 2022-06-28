@@ -12,7 +12,7 @@ function Header({text, bgColor, textColor}) {
   return (
     <header style={headerStyles}>
       <div className="container">
-        <h2>{text}</h2>
+        <h1 className='header__title'>{text}</h1>
       </div>
     </header>
   )
@@ -20,9 +20,9 @@ function Header({text, bgColor, textColor}) {
 
 //текст по умолчанию
 Header.defaultProps = {
-    text: 'Feedback UI',
+    text: 'Интерфейс отзывов',
     bgColor: 'rgba(0,0,0,0.4)',
-    textColor: 'rgb(8,8,136)',
+    textColor: 'rgb(255,255,255)',
 }
 //проверка типов текста
 Header.propTypes={

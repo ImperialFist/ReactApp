@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { motion } from "framer-motion"
 
 
 // version - класс с типом кнопки
 function Button({children, version, type, isDisabled}) {
   return (
-    <button type={type} disabled={isDisabled} className={`btn btn-${version}`}>
-      {children}
-    </button>
+    <motion.div
+    whileTap={{ scale: 0.8 }}>
+      <button type={type} disabled={isDisabled} className={`btn btn-${version}`}>
+        {children}
+      </button>
+    </motion.div>
   )
 }
 

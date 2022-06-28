@@ -57,9 +57,10 @@ function FeedbackForm({handleAdd}) {
                     placeholder='Оставьте отзыв' 
                     value={text}
                 />
-                <Button type='submit' isDisabled={btnDisabled} >
-                    Send
-                </Button>
+           
+                    <Button type='submit' isDisabled={btnDisabled} >
+                        Send
+                    </Button>
             </div>
             {message && <p className='message'>{message}</p>}
         </form>
