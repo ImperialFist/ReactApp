@@ -51,7 +51,8 @@ function FeedbackForm() {
             }
             //проверка на флаг с редактированием
             if(feedbackEdit.edit=== true){
-                updateFeedback(feedbackEdit.item.id, newFeedback)
+                updateFeedback(feedbackEdit.item.id, newFeedback);
+                feedbackEdit.edit = false;
             } else{
                 addFeedback(newFeedback)
             }
